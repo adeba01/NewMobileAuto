@@ -30,7 +30,7 @@ public class GlobalParams {
 
     }
 
-    public String systemport() {
+    public String getSystemPort() {
         return systemport.get();
     }
 

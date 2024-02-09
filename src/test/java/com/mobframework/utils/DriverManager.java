@@ -29,7 +29,7 @@ public class DriverManager {
 
             try{
             //Create a driver instance using appium server url and the desired capabilities
-            driver = new AndroidDriver(new ServerManager().getUrl(), new CapabilitiesManager().getCapabilities());
+            driver = new AndroidDriver(new ServerManager().getServer().getUrl(), new CapabilitiesManager().getCapabilities());
 
             //set the ThreadLocal drver variable to equal to the newly created driver
             DriverManager.driver.set(driver);

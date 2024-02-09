@@ -11,7 +11,7 @@ public class ServerManager {
     public static ThreadLocal<AppiumDriverLocalService> server = new ThreadLocal<>();
 
     //Create a getter method for server
-    public AppiumDriverLocalService getDriver() {
+    public AppiumDriverLocalService getServer() {
         return server.get();
 
     }
