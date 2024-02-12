@@ -36,7 +36,7 @@ public class GlobalParams {
 
     // Initialize the parameters
 
-    public void InitializeGlobalParams() {
+    public void initializeGlobalParams() {
         GlobalParams parameters = new GlobalParams();
         parameters.setPlatformName(System.getProperty("platform", "Android"));
         parameters.setDeviceName(System.getProperty("deviceName", "Pixel7"));

@@ -6,7 +6,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class CapabilititesManager {
+public class CapabilitiesManager {
     public DesiredCapabilities getCapabilities() throws IOException {
         // Create a new instance of GlobalParams to use them
         GlobalParams params = new GlobalParams();
