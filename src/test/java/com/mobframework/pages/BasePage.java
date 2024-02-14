@@ -2,6 +2,7 @@ package com.mobframework.pages;
 
 import java.time.Duration;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -18,17 +19,23 @@ public class BasePage {
     private AppiumDriver driver;
     private WebDriverWait wait;
 
-    public BasePage(){
+    public BasePage() {
         this.driver = new DriverManager().getDriver();
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-    public WebElement getElement(By locator){
+
+    public WebElement getElement(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
     }
-    public void DragAndDrop (WebElement element){
-        driver.executeScript("mobile:clickGesture", ImmutableMap.of
-        ("Startx",100,"Starty",200, "Endx",700,"Endy",1700));
+
+    public void DragAndDrop(int startX, int startY, int endX, int endY) {
+        driver.executeScript("mobile:dragGesture",
+                ImmutableMap.of("startX", startX, "startY", startY, "endX", endX, "endY", endY));
+    }
+
+    public void checkSimilarityOfText(String text1, String text2) {
+        Assert.assertEquals(text1, text2);
     }
 }
