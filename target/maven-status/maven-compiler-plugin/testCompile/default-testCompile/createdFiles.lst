@@ -1,0 +1,15 @@
+com\mobframework\utils\VideoManager.class
+com\mobframework\AppTest.class
+com\mobframework\stepdefinitions\LongCLick.class
+com\mobframework\utils\DriverManager.class
+com\mobframework\stepdefinitions\Preference.class
+com\mobframework\pages\ApiDemos.class
+com\mobframework\pages\BasePage.class
+com\mobframework\pages\DragAndDropPage.class
+com\mobframework\pages\PreferenceDependencies.class
+com\mobframework\utils\PropertyManager.class
+com\mobframework\utils\ServerManager.class
+com\mobframework\hooks\Hooks.class
+com\mobframework\utils\GlobalParams.class
+com\mobframework\utils\CapabilitiesManager.class
+com\mobframework\Runners\RunnerTest.class

@@ -40,7 +40,7 @@ public class GlobalParams {
         GlobalParams parameters = new GlobalParams();
         parameters.setPlatformName(System.getProperty("platform", "Android"));
         parameters.setDeviceName(System.getProperty("deviceName", "Pixel7"));
-        parameters.setSystemPort("20000");
+        parameters.setSystemPort("0");
 
     }
 

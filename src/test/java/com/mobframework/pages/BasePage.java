@@ -22,7 +22,7 @@ public class BasePage {
     public BasePage() {
         this.driver = new DriverManager().getDriver();
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     public WebElement getElement(By locator) {
@@ -38,4 +38,14 @@ public class BasePage {
     public void checkSimilarityOfText(String text1, String text2) {
         Assert.assertEquals(text1, text2);
     }
+
+    public void addTextToField(By locator, String text) {
+        getElement(locator).sendKeys(text);
+    }
+
+    public String getTextValueOfField(By locator) {
+        return getElement(locator).getAttribute("text");
+    }
+    
+
 }
