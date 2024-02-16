@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.collect.ImmutableMap;
 import com.mobframework.utils.DriverManager;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -46,6 +47,10 @@ public class BasePage {
     public String getTextValueOfField(By locator) {
         return getElement(locator).getAttribute("text");
     }
-    
+    public void scrollViewElement(String elementText){
+        driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(" +
+        "new UiSelector().textContains(\"" + elementText + "\"))"));
 
+    }
+    
 }
