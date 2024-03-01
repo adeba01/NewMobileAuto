@@ -10,7 +10,6 @@ public class Scroll {
     ScorllPage scrll = new ScorllPage();
     ApiDemos apdm = new ApiDemos();
 
-
     @When("a user taps on views")
     public void userTapsOnViews() {
         // Implementation to tap on views
@@ -26,11 +25,16 @@ public class Scroll {
         scrll.scrllToElmnt();
     }
 
+    @When("the user should see TextClock link")
+    public void userShouldSeeTextClockLink(){
+        
+    }
+
     @Then("the user scroll up")
     public void userScrollsUp() {
         // Implementation to scroll up
         // This could involve swiping or scrolling up on the screen
         scrll.scrllUp();
     }
-    
+
 }

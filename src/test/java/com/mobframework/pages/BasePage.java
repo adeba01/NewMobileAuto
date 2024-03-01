@@ -4,7 +4,9 @@ import java.time.Duration;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,6 +17,8 @@ import com.mobframework.utils.DriverManager;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.touch.offset.ElementOption;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class BasePage {
     private AppiumDriver driver;
@@ -50,7 +54,18 @@ public class BasePage {
     public void scrollViewElement(String elementText){
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(" +
         "new UiSelector().textContains(\"" + elementText + "\"))"));
+        
 
     }
+
+    public void swipeToElement(By locator, String direction ){
+        WebElement element = getElement(locator);
+        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+    "elementId", ((RemoteWebElement) element).getId(),
+    "direction", "left",
+    "percent", 0.75));
+
+    }
+        
     
 }
