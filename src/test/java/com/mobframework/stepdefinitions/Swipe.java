@@ -28,7 +28,7 @@ public class Swipe {
         apdmo.clickOnPhotoLink();
     }
 
-    @Then("swipe two images to left")
+    @And("swipe two images to left")
     public void swipeTwoImagesToLeft() {
         // Implementation to swipe two images to left
         apdmo.swipeTheFirstImageLeft();
@@ -37,6 +37,12 @@ public class Swipe {
     @And("swipe back two images to right")
     public void swipeBackTwoImagesToRight() {
         // Implementation to swipe back two images to right
+        apdmo.swipeTheSecondImageRight();
+    }
+    @Then("first image will be in focus")
+    public void firstImageWillBeInFocus(){
+        //implementation of first image will be in focus
+        apdmo.isFirstImageInFocus();
     }
 
 }

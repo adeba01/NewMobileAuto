@@ -62,7 +62,7 @@ public class BasePage {
         WebElement element = getElement(locator);
         ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
     "elementId", ((RemoteWebElement) element).getId(),
-    "direction", "left",
+    "direction", direction,
     "percent", 0.75));
 
     }

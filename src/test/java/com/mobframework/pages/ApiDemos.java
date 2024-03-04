@@ -13,10 +13,8 @@ public class ApiDemos extends BasePage {
     By scrllToradioGroup = AppiumBy.accessibilityId("Radio Group");
     By garellyBy = AppiumBy.accessibilityId("Gallery");
     By photoBy = AppiumBy.accessibilityId("1. Photos");
-    By image1By = AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[1]");
-    By image2By = AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[2]");
-
-
+    By image1By = AppiumBy.xpath(
+            "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[1]");
 
     public ApiDemos NavigateToView() {
         getElement(ViewLink).click();
@@ -46,22 +44,24 @@ public class ApiDemos extends BasePage {
 
     }
 
-    public void clickToGallery(){
+    public void clickToGallery() {
         getElement(garellyBy).click();
     }
-    public void clickOnPhotoLink(){
+
+    public void clickOnPhotoLink() {
         getElement(photoBy).click();
     }
 
-    public void swipeTheFirstImageLeft(){
+    public void swipeTheFirstImageLeft() {
         swipeToElement(image1By, "left");
     }
 
-    public void isImageSwiped() {
-        String firstImageFocusable = getElement(image1By).getAttribute("focusable");
-        String secondImageFocusable = getElement(image2By).getAttribute("focusable");
-        assertEquals(firstImageFocusable, "false");
-        assertEquals(secondImageFocusable, "true");
+    public void swipeTheSecondImageRight() {
+        swipeToElement(image1By, "right");
     }
 
+    public void isFirstImageInFocus() {
+        String firstImageFocus = getElement(image1By).getAttribute("focusable");
+        assertEquals(firstImageFocus, "true");
+    }
 }
