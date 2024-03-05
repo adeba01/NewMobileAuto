@@ -13,8 +13,13 @@ public class ApiDemos extends BasePage {
     By scrllToradioGroup = AppiumBy.accessibilityId("Radio Group");
     By garellyBy = AppiumBy.accessibilityId("Gallery");
     By photoBy = AppiumBy.accessibilityId("1. Photos");
-    By image1By = AppiumBy.xpath(
-            "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[1]");
+    By image1By = AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.Gallery/android.widget.ImageView[1]");
+    By expandableBy = AppiumBy.accessibilityId("Expandable Lists");
+    By customBy = AppiumBy.accessibilityId("1. Custom Adapter");
+    By peopleNameBy = AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ExpandableListView/android.widget.TextView[1]\r\n" + //
+                "");
+    By sampleBy = AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.FrameLayout/android.widget.TextView");
+
 
     public ApiDemos NavigateToView() {
         getElement(ViewLink).click();
@@ -63,5 +68,19 @@ public class ApiDemos extends BasePage {
     public void isFirstImageInFocus() {
         String firstImageFocus = getElement(image1By).getAttribute("focusable");
         assertEquals(firstImageFocus, "true");
+    }
+
+    public void clickOnExpandable(){
+        getElement(expandableBy).click();
+    }
+
+    public void clickOnCustom(){
+        getElement(customBy).click();
+    }
+    public void longClickOnPeopleNames(){
+        longClickToElement(peopleNameBy);
+    }
+    public void popUpMessageSample(){
+        getElement(sampleBy);
     }
 }

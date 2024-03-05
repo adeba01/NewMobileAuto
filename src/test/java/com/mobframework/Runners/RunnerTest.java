@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src/test/resources/features" }, 
                 glue = { "com.mobframework.stepdefinitions","com.mobframework.pages", "com.mobframework.hooks","com.mobframework.utils" }, 
-                plugin = { "pretty", "html:target/report/html-report.html","json:target/report/json-report.json" },tags="@swp")
+                plugin = { "pretty", "html:target/report/html-report.html","json:target/report/json-report.json" },tags="@lgclck")
 
 public class RunnerTest {
 

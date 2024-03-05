@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.bidi.browsingcontext.Locator;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,7 +17,10 @@ import com.mobframework.utils.DriverManager;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 
@@ -65,6 +69,12 @@ public class BasePage {
     "direction", direction,
     "percent", 0.75));
 
+    }
+
+    public void longClickToElement(By locator){
+        WebElement element = getElement(locator);
+        ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", 
+            ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "duration", 1500));
     }
         
     

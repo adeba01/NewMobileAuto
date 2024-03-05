@@ -1,7 +1,8 @@
 Feature: Actions
-
-Scenario: LongClick
-    When a user tap on view link
-    And a user tap on Drag and Drop link
-    And a user long click on textleess circle
-    Then the message "Dropped!" should display
+    @lgclck
+    Scenario: LongClck
+        Given the user taps on views
+        And taps on Expandable Lists
+        And taps on Custom Adapter
+        And longclick on People Names
+        Then a popup should appear with message "sample menu"

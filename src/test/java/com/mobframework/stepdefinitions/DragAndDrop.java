@@ -6,7 +6,7 @@ import com.mobframework.pages.DragAndDropPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LongCLick {
+public class DragAndDrop {
     ApiDemos apiDemosPage = new ApiDemos();
     DragAndDropPage dragNdrop;
 
