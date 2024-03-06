@@ -2,7 +2,12 @@ package com.mobframework.pages;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import io.appium.java_client.AppiumBy;
 
 public class ApiDemos extends BasePage {
@@ -19,7 +24,9 @@ public class ApiDemos extends BasePage {
     By peopleNameBy = AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ExpandableListView/android.widget.TextView[1]\r\n" + //
                 "");
     By sampleBy = AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.FrameLayout/android.widget.TextView");
-
+    By autoFillBy = AppiumBy.accessibilityId("Auto Complete");
+    By screenTopBy = AppiumBy.accessibilityId("1. Screen Top");
+    By countrySelectionBy = AppiumBy.id("io.appium.android.apis:id/edit");
 
     public ApiDemos NavigateToView() {
         getElement(ViewLink).click();
@@ -83,4 +90,22 @@ public class ApiDemos extends BasePage {
     public void popUpMessageSample(){
         getElement(sampleBy);
     }
+
+    public void clickOnAutoFillLink(){
+        getElement(autoFillBy).click();
+    }
+
+    public void clickOnScreenTop(){
+        getElement(screenTopBy).click();
+    }
+
+    public void fillInTextField(String text){
+       getElement(countrySelectionBy).click();
+        getElement(countrySelectionBy).sendKeys(text);
+    }
+
+    public void checkPopUpMessage(){
+        getElement(DragnDrop)
+    }
+
 }
