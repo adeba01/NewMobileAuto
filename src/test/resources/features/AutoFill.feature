@@ -1,9 +1,11 @@
 Feature: Actions
-@auto
+    @auto
     Scenario: Autofll
         Given user taps on viewsLink
         And taps on Auto Complete
         And taps on Screen Top
-        And fill in two character "rw"
-        Then check if it popup "Rwanda"
-
+        And searches "<search_term>"
+        Then the search result should contain "<search_term>"
+    Examples:
+            | search_term |
+            | co          |

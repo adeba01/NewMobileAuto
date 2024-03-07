@@ -104,8 +104,6 @@ public class ApiDemos extends BasePage {
         getElement(countrySelectionBy).sendKeys(text);
     }
 
-    public void checkPopUpMessage(){
-        getElement(DragnDrop)
-    }
+    
 
 }

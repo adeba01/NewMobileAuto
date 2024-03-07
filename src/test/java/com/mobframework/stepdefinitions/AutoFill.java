@@ -29,15 +29,15 @@ public class AutoFill {
         apdm.clickOnScreenTop();
     }
 
-    @And("fill in two character {string}")
+    @And("searches {string}")
     public void fill_in_two_character(String characters) {
         // Implementation for filling in two characters
         // You can use automation code here to input the provided characters
         apdm.fillInTextField(characters);
     }
 
-    @Then("check if it popup {string}")
-    public void check_popup(String expectedPopup) {
+    @Then("the search result should contain {string}")
+    public void check_popup(String characters) {
         // Implementation for checking if the expected popup appears
         // You can use automation code here to verify the appearance of the popup with the expected message
         // For example, you can use Selenium or Appium to locate the popup and verify its message
