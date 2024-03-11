@@ -14,7 +14,7 @@ public class Scroll {
     public void userTapsOnViews() {
         // Implementation to tap on views
         // This could involve finding the "views" element and tapping on it
-        apdm.NavigateToView();
+        apdm.navigateToView();
 
     }
 

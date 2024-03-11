@@ -13,7 +13,7 @@ public class LongClck {
     @Given("user taps on views")
     public void user_taps_on_views() {
         // Implementation for tapping on views
-        apdm.NavigateToView();
+        apdm.navigateToView();
     }
 
     @And("taps on Expandable Lists")

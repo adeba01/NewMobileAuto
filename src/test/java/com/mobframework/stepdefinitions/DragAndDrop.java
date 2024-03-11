@@ -13,7 +13,7 @@ public class DragAndDrop {
     @When("a user tap on view link")
     public void userTapOnViewLink() {
         // Perform tap action on the "view" link
-        apiDemosPage.NavigateToView();
+        apiDemosPage.navigateToView();
     }
 
     @When("a user tap on Drag and Drop link")

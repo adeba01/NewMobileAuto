@@ -73,8 +73,11 @@ public class BasePage {
     public void longClickToElement(By locator){
         WebElement element = getElement(locator);
         ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", 
-            ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "duration", 1500));
+            ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "duration", 1000));
     }
         
+    public void ratingStar(int cordinateX, int cordinateY){
+        driver.executeScript("mobile: clickGesture", ImmutableMap.of("x", cordinateX, "y", cordinateY));
+    }
     
 }

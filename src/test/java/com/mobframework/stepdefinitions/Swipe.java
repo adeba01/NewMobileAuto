@@ -13,7 +13,7 @@ public class Swipe {
     @Given("user tap on views")
     public void userTapsOnViews() {
         // Implementation to tap on views
-        apdmo.NavigateToView();
+        apdmo.navigateToView();
     }
 
     @And("taps on Gallery")

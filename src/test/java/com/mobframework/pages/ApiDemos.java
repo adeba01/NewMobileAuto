@@ -27,8 +27,9 @@ public class ApiDemos extends BasePage {
     By autoFillBy = AppiumBy.accessibilityId("Auto Complete");
     By screenTopBy = AppiumBy.accessibilityId("1. Screen Top");
     By countrySelectionBy = AppiumBy.id("io.appium.android.apis:id/edit");
+    By ratngBy = AppiumBy.accessibilityId("Rating Bar");
 
-    public ApiDemos NavigateToView() {
+    public ApiDemos navigateToView() {
         getElement(ViewLink).click();
         return this;
 
@@ -50,10 +51,10 @@ public class ApiDemos extends BasePage {
         return this;
     }
 
-    public void scrllToRadioGroup() {
+    public RadioGroupPage scrllToRadioGroup() {
         scrollViewElement("Radio Group");
         getElement(scrllToradioGroup).click();
-
+        return new RadioGroupPage();
     }
 
     public void clickToGallery() {
@@ -102,6 +103,11 @@ public class ApiDemos extends BasePage {
     public void fillInTextField(String text){
        getElement(countrySelectionBy).click();
         getElement(countrySelectionBy).sendKeys(text);
+    }
+
+    public void scrollToRatingBar(){
+        scrollViewElement("Rating Bar");
+        getElement(ratngBy).click();
     }
 
     

@@ -14,7 +14,7 @@ public class AutoFill {
     @Given("user taps on viewsLink")
     public void user_taps_on_views() {
         // Implementation for tapping on views
-        apdm.NavigateToView();
+        apdm.navigateToView();
     }
 
     @And("taps on Auto Complete")

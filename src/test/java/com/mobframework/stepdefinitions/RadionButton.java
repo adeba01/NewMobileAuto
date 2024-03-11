@@ -9,8 +9,7 @@ import io.cucumber.java.en.When;
 
 public class RadionButton {
 
-    RadioGroupPage radio = new RadioGroupPage();
-    ScorllPage scrll = new ScorllPage();
+    RadioGroupPage radio;
     ApiDemos apdm = new ApiDemos();
 
 
@@ -18,7 +17,7 @@ public class RadionButton {
     public void userTapsOnViews() {
         // Implementation to tap on views
         // This could involve finding the "views" element and tapping on it
-        apdm.NavigateToView();
+        apdm.navigateToView();
 
     }
 
@@ -26,13 +25,13 @@ public class RadionButton {
     public void userScrollsDownToRadioGroupAndTapsOnIt() {
         // Implementation to scroll down
         // This could involve swiping or scrolling down on the screen
-        apdm.scrllToRadioGroup();
+        radio = apdm.scrllToRadioGroup();
         
     }
 
     @When("taps on All of them radio button")
     public void tapsOnAllOfThemRadioButton(){
-        radio.clickToAll();
+        radio.clickToAllOfThem();
         
     }
 

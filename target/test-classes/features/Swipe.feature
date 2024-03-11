@@ -1,6 +1,6 @@
 Feature: Actions
     @swp
-    Scenario: SwipeToLeft
+    Scenario: Swipe To Left and Right
         Given user tap on views
         And taps on Gallery
         And taps on Photos
